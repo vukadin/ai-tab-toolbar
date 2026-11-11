@@ -14,7 +14,7 @@ npm pkg set publisher="YOUR_REGISTERED_PUBLISHER_ID"
 
 `npm run release:check` rejects local placeholder IDs. It validates package files, not account ownership: verify that you control the publisher in the Marketplace dashboard.
 
-The source repository is [vukadin/ai-tab-toolbar](https://github.com/vukadin/ai-tab-toolbar). Its repository, homepage, and issue URLs are configured in `package.json`. If the repository is private, these links are accessible only to people with repository access. Make it public before Marketplace publication if the listing should offer publicly accessible source and issue links.
+The public source repository is [vukadin/ai-tab-toolbar](https://github.com/vukadin/ai-tab-toolbar). Its repository, homepage, and issue URLs are configured in `package.json` so the Marketplace listing can link to the source and issue tracker.
 
 ## Validate and package
 
