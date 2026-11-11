@@ -1,0 +1,13 @@
+{
+  "package": "@lobehub/icons-static-svg",
+  "version": "1.102.0",
+  "integrity": "sha512-3Na6S2kdslmsfnBjuL0PQWQClrmuWe/pWThRN/3J2VzPg5MhVghy8knVu7kd1/lqA9ydZBvwmnKLzuBo0Wm6Qw==",
+  "repository": "https://github.com/lobehub/lobe-icons",
+  "commit": "989535d6c13da2dec5a2937fe2789d4af4fdd8e0",
+  "license": "MIT",
+  "licenseFile": "licenses/lobehub-icons-LICENSE",
+  "files": {
+    "codex-dark.svg": "icons/openai.svg",
+    "claude.svg": "icons/claude.svg"
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "name": "ai-tab-toolbar",
+  "displayName": "AI Tab Toolbar",
+  "description": "Open Codex and Claude Code as editor tabs in a shared, locked group, with theme-aware toolbar buttons.",
+  "version": "1.0.4",
+  "publisher": "NjegosVukadin",
+  "license": "MIT",
+  "author": "Njegos Vukadin",
+  "icon": "resources/marketplace-icon.png",
+  "preview": true,
+  "keywords": [
+    "codex",
+    "claude",
+    "ai",
+    "chat",
+    "editor",
+    "tabs",
+    "toolbar"
+  ],
+  "galleryBanner": {
+    "color": "#14263d",
+    "theme": "dark"
+  },
+  "files": [
+    "extension.js",
+    "availability.js",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "PRIVACY.md",
+    "THIRD_PARTY_NOTICES.md",
+    "licenses/lobehub-icons-LICENSE",
+    "resources/ai-tab-toolbar.woff",
+    "resources/marketplace-icon.png"
+  ],
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./extension.js",
+  "extensionKind": [
+    "ui"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "scripts": {
+    "test": "node --test test/availability.test.js test/release.test.js",
+    "check": "node --check extension.js && node --check availability.js && npm test",
+    "build:icons": "node scripts/run-icon-builder.mjs",
+    "check:icons": "node scripts/run-icon-builder.mjs --check",
+    "build:listing-icon": "node scripts/build-listing-icon.mjs",
+    "check:listing-icon": "node scripts/build-listing-icon.mjs --check",
+    "release:check": "node scripts/check-release.mjs",
+    "package:vsix": "node scripts/package.mjs",
+    "package:draft": "node scripts/package.mjs --draft"
+  },
+  "contributes": {
+    "icons": {
+      "ai-tab-toolbar-codex": {
+        "description": "Codex logo for AI Tab Toolbar",
+        "default": {
+          "fontPath": "./resources/ai-tab-toolbar.woff",
+          "fontCharacter": "\\E001"
+        }
+      },
+      "ai-tab-toolbar-claude": {
+        "description": "Claude logo for AI Tab Toolbar",
+        "default": {
+          "fontPath": "./resources/ai-tab-toolbar.woff",
+          "fontCharacter": "\\E002"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "aiTabToolbar.openCodex",
+        "title": "Open Codex in AI Editor Group",
+        "category": "AI Tabs",
+        "icon": "$(ai-tab-toolbar-codex)",
+        "enablement": "aiTabToolbar.codexAvailable"
+      },
+      {
+        "command": "aiTabToolbar.openClaude",
+        "title": "Open Claude Code in AI Editor Group",
+        "category": "AI Tabs",
+        "icon": "$(ai-tab-toolbar-claude)",
+        "enablement": "aiTabToolbar.claudeAvailable"
+      },
+      {
+        "command": "aiTabToolbar.useGroup",
+        "title": "Use This Editor Group for AI Tabs",
+        "category": "AI Tabs",
+        "enablement": "aiTabToolbar.anyProviderAvailable"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "aiTabToolbar.openCodex",
+          "group": "navigation@1",
+          "when": "aiTabToolbar.codexAvailable"
+        },
+        {
+          "command": "aiTabToolbar.openClaude",
+          "group": "navigation@2",
+          "when": "aiTabToolbar.claudeAvailable"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "command": "aiTabToolbar.useGroup",
+          "group": "aiTabs",
+          "when": "aiTabToolbar.anyProviderAvailable"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "aiTabToolbar.openCodex",
+          "when": "aiTabToolbar.codexAvailable"
+        },
+        {
+          "command": "aiTabToolbar.openClaude",
+          "when": "aiTabToolbar.claudeAvailable"
+        },
+        {
+          "command": "aiTabToolbar.useGroup",
+          "when": "aiTabToolbar.anyProviderAvailable"
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "2.6.2",
+    "@vscode/vsce": "4.1.0"
+  },
+  "overrides": {
+    "@vscode/vsce": {
+      "minimatch": "11.0.1"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vukadin/ai-tab-toolbar.git"
+  },
+  "homepage": "https://github.com/vukadin/ai-tab-toolbar#readme",
+  "bugs": {
+    "url": "https://github.com/vukadin/ai-tab-toolbar/issues"
+  }
+}
