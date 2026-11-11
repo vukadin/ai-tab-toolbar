@@ -1,6 +1,6 @@
 # Publishing AI Tab Toolbar
 
-Prepared identity: **NjegosVukadin.ai-tab-toolbar**, version **1.0.4 Preview**, with MIT-licensed extension code. Nothing in the build or packaging scripts uploads an extension, creates an account, or publishes a listing.
+Prepared identity: **NjegosVukadin.ai-tab-toolbar**, version **1.0.5 Preview**, with MIT-licensed extension code. Nothing in the build or packaging scripts uploads an extension, creates an account, or publishes a listing.
 
 ## Verify your publisher
 
@@ -26,7 +26,7 @@ npm run release:check
 npm run package:vsix
 ```
 
-The final VSIX is written to `dist/NjegosVukadin.ai-tab-toolbar-1.0.4.vsix`. Packaging uses the pinned local `@vscode/vsce`, performs the test suite, excludes development dependencies, and includes only the runtime files listed in the manifest's `files` allowlist. The generated font, listing PNG, code license, privacy note, and third-party license are included.
+The final VSIX is written to `dist/NjegosVukadin.ai-tab-toolbar-1.0.5.vsix`. Packaging uses the pinned local `@vscode/vsce`, performs the test suite, excludes development dependencies, and includes only the runtime files listed in the manifest's `files` allowlist. The generated font, listing PNG, code license, privacy note, and third-party license are included.
 
 `npm run package:draft` creates an inspection package with `-draft.vsix` in its filename. Use the final package, without that suffix, for the Marketplace upload.
 

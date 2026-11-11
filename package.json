@@ -2,7 +2,7 @@
   "name": "ai-tab-toolbar",
   "displayName": "AI Tab Toolbar",
   "description": "Open Codex and Claude Code as editor tabs in a shared, locked group, with theme-aware toolbar buttons.",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "publisher": "NjegosVukadin",
   "license": "MIT",
   "author": "Njegos Vukadin",

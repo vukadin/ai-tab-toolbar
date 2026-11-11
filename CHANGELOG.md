@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.5
+
+- Simplify the README to focus on installation and usage, with direct Marketplace installation instructions.
+
 ## 1.0.4
 
 - Prepare the extension for public distribution with an original listing icon, release validation, privacy documentation, and reproducible packaging.
